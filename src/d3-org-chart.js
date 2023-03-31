@@ -30,6 +30,7 @@ export class OrgChart {
             container: "body",
             defaultTextFill: "#2C3E50",
             defaultFont: "Helvetica",
+            highLightColor:"#152785",
             ctx: document.createElement('canvas').getContext('2d'),
             data: null,
             duration: 400,
@@ -81,7 +82,7 @@ export class OrgChart {
             nodeUpdate: function (d, i, arr) {
                 d3.select(this)
                     .select('.node-rect')
-                    .attr("stroke", d => d.data._highlighted || d.data._upToTheRootHighlighted ? '#152785' : 'none')
+                    .attr("stroke", d => d.data._highlighted || d.data._upToTheRootHighlighted ? highLightColor : 'none')
                     .attr("stroke-width", d.data._highlighted || d.data._upToTheRootHighlighted ? 10 : 1)
             },
 
